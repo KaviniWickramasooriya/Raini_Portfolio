@@ -366,7 +366,7 @@
     }
   }
 
-  /* ——— ABOUT POSTER STYLING & MOBILE FIXES ——— */
+  /* ——— ABOUT POSTER STYLING & MOBILE FIXES (Explicitly ensuring the silver SINGER/ACTRESS text displays correctly and scales properly on mobile view) ——— */
   .about-poster {
     position: relative;
     isolation: isolate;
@@ -409,7 +409,7 @@
     font-size: clamp(3.8rem, 16vw, 14rem);
     line-height: 0.78;
     letter-spacing: 0.02em;
-    color: color-mix(in oklab, var(--color-fg) 85%, transparent);
+    color: color-mix(in oklab, var(--color-fg) 92%, transparent);
     text-align: center;
     pointer-events: none;
     white-space: nowrap;
@@ -431,22 +431,23 @@
 
   @media (max-width: 640px) {
     .about-mirror {
-      opacity: 0.45;
-      width: 52%;
+      opacity: 0.5;
+      width: 50%;
     }
     .about-type {
-      font-size: clamp(3.2rem, 18vw, 5rem);
-      top: 32%;
-      color: color-mix(in oklab, var(--color-fg) 85%, transparent);
+      font-size: clamp(4rem, 17vw, 6rem);
+      top: 34%;
+      color: color-mix(in oklab, var(--color-fg) 95%, transparent);
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
     }
   }
 
-  /* ——— CONTACT SECTION STYLING ——— */
+  /* ——— CONTACT SECTION STYLING (Balanced face framing) ——— */
   .contact-section {
     isolation: isolate;
   }
   .contact-bg-image {
-    object-position: center 45%;
+    object-position: center 38%;
     opacity: 0.65;
     filter: saturate(0.8) contrast(1.05);
   }

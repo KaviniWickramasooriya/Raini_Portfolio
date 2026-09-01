@@ -32,10 +32,10 @@ export function MusicSection() {
               className="mt-4 inline-flex h-11 w-full items-center justify-center gap-2 rounded-[var(--radius-md)] bg-accent font-sans text-xs font-medium uppercase tracking-[0.18em] text-accent-fg transition-opacity hover:opacity-90"
               onClick={() => setOpenEmbed(true)}
             >
-              <svg className="size-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="size-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.48.66.24 1.02zm1.44-3.84c-.301.42-.84.6-1.26.3-3.24-1.98-8.16-2.58-11.94-1.44-.54.18-1.14-.12-1.32-.66-.18-.54.12-1.14.66-1.32 4.38-1.32 9.84-.66 13.68 1.62.42.24.6.84.3 1.26zm.12-4.08C15.24 7.32 8.82 7.14 5.1 8.28c-.66.18-1.38-.18-1.56-.84-.18-.66.18-1.38.84-1.56 4.32-1.32 11.4-1.14 15.66 1.38.6.36.78 1.14.42 1.74-.36.54-1.14.72-1.74.36z" />
               </svg>
-              Open full catalogue on Spotify
+              <span className="truncate">Open full catalogue on Spotify</span>
             </button>
             {openEmbed ? (
               <div className="relative mt-4 overflow-hidden rounded-[var(--radius-lg)] bg-surface shadow-[var(--shadow-border)]">
@@ -72,27 +72,27 @@ export function MusicSection() {
                     target="_blank"
                     rel="noreferrer"
                     className={cn(
-                      "group flex min-h-16 items-center gap-4 rounded-[var(--radius-md)] px-3 py-3 transition-colors duration-150 hover:bg-fg/5",
+                      "group flex min-h-16 items-center gap-3 sm:gap-4 rounded-[var(--radius-md)] px-2 sm:px-3 py-3 transition-colors duration-150 hover:bg-fg/5",
                     )}
                   >
-                    <span className="w-6 font-sans text-xs tabular-nums text-subtle">
+                    <span className="w-5 sm:w-6 font-sans text-xs tabular-nums text-subtle shrink-0">
                       {String(i + 1).padStart(2, "0")}
                     </span>
-                    <span className="relative size-11 shrink-0 overflow-hidden rounded-[var(--radius-sm)]">
+                    <span className="relative size-10 sm:size-11 shrink-0 overflow-hidden rounded-[var(--radius-sm)]">
                       <img src={t.cover} alt="" className="size-full object-cover" />
                       <span className="absolute inset-0 hidden items-center justify-center bg-bg/50 group-hover:flex">
                         <Play className="ml-0.5 size-3.5 fill-fg text-fg" />
                       </span>
                     </span>
                     <span className="min-w-0 flex-1">
-                      <span className="block truncate font-serif text-lg leading-tight text-fg">
+                      <span className="block truncate font-serif text-base sm:text-lg leading-tight text-fg">
                         {t.title}
                       </span>
-                      <span className="block truncate text-xs text-muted">{t.note}</span>
+                      <span className="block truncate text-[0.7rem] sm:text-xs text-muted">{t.note}</span>
                     </span>
                     <span className="hidden font-sans text-xs text-subtle sm:inline">{t.year}</span>
-                    <span className="font-sans text-xs tabular-nums text-subtle">{t.duration}</span>
-                    <svg className="size-4 shrink-0 fill-subtle opacity-40 transition-opacity group-hover:opacity-100 group-hover:fill-accent" viewBox="0 0 24 24" aria-hidden="true">
+                    <span className="font-sans text-xs tabular-nums text-subtle shrink-0">{t.duration}</span>
+                    <svg className="size-4 shrink-0 fill-subtle opacity-40 transition-opacity group-hover:opacity-100 group-hover:fill-accent hidden sm:block" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.48.66.24 1.02zm1.44-3.84c-.301.42-.84.6-1.26.3-3.24-1.98-8.16-2.58-11.94-1.44-.54.18-1.14-.12-1.32-.66-.18-.54.12-1.14.66-1.32 4.38-1.32 9.84-.66 13.68 1.62.42.24.6.84.3 1.26zm.12-4.08C15.24 7.32 8.82 7.14 5.1 8.28c-.66.18-1.38-.18-1.56-.84-.18-.66.18-1.38.84-1.56 4.32-1.32 11.4-1.14 15.66 1.38.6.36.78 1.14.42 1.74-.36.54-1.14.72-1.74.36z" />
                     </svg>
                   </a>
