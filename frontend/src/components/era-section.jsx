@@ -13,11 +13,11 @@ export function EraSection() {
         <div className="era-strips" aria-hidden="false">
           {eras.map((era) => (
             <figure
-              key={era.year}
+              key={era.title}
               className="era-strip"
               style={{ height: era.height }}
             >
-              <img src={era.photo} alt={`${era.year} — ${era.title}`} />
+              <img src={era.photo} alt={era.title} />
               <figcaption className="era-year">{era.year}</figcaption>
             </figure>
           ))}

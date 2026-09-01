@@ -56,16 +56,17 @@ export function LandingHero() {
         <p className="kicker rise text-center">The voice of</p>
       </div>
 
-      <div className="hero-meta-left">
-        <div className="hero-meta-card rise-3">
+      {/* Styled Desktop Meta Cards positioned nicely around the central artist stage */}
+      <div className="hero-meta-left rise-3">
+        <div className="hero-meta-card">
           <span className="hero-meta-label">Profile</span>
           <span className="hero-meta-value accent">Featured Artist</span>
           <span className="hero-meta-sub">Exclusive Portfolio</span>
         </div>
       </div>
 
-      <div className="hero-meta-right">
-        <div className="hero-meta-card rise-4 text-right">
+      <div className="hero-meta-right rise-4">
+        <div className="hero-meta-card text-right">
           <span className="hero-meta-label">Location</span>
           <span className="hero-meta-value">Colombo, {artist.country}</span>
           <span className="hero-meta-sub accent">Est. 2009</span>

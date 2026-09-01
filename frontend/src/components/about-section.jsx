@@ -22,14 +22,14 @@ export function AboutSection() {
         SINGER
         <span className="block">ACTRESS</span>
       </p>
-      <div className="relative z-10 flex min-h-svh flex-col items-center justify-end pb-16 pt-28">
+      <div className="relative z-10 flex min-h-svh flex-col items-center justify-end pb-12 pt-28 sm:pb-16">
         <img
           src={photos.aboutCenter}
           alt="Raini Charuka, full-length portrait"
           className="about-figure"
         />
       </div>
-      <div className="relative z-10 mx-auto -mt-28 max-w-3xl px-6 pb-24 text-center">
+      <div className="relative z-10 mx-auto -mt-20 max-w-3xl px-6 pb-24 text-center sm:-mt-28">
         <p className="kicker">{bio.kicker}</p>
         <h2 id="about-title" className="serif-title mt-4 text-fg">
           {bio.title}
