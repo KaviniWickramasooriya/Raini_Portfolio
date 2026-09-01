@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-neo-black: #050505;
+  --color-neo-charcoal: #0f0f11;
+  --color-neo-grey: #9ca3af;
+  --color-neo-white: #ffffff;
+  --color-neo-red: #e11d48;
+  --color-neo-gold: #f59e0b;
+
+  --font-serif: "Syne", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+}
+
+html, body {
+  background-color: var(--color-neo-black);
+  color: var(--color-neo-grey);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::selection {
+  background-color: var(--color-neo-red);
+  color: var(--color-neo-white);
+}
+
+.brutalist-border {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-10%, 15%); }
+  40% { transform: translate(15%, -10%); }
+  60% { transform: translate(-5%, -20%); }
+  80% { transform: translate(10%, 10%); }
+}
+.animate-grain {
+  animation: grain 6s steps(10) infinite;
+}
