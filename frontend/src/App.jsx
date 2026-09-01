@@ -1,34 +1,73 @@
-import SmoothScroll from "./layout/SmoothScroller";
-import GrainEffect from "./layout/GrainEffect";
-import PreciseCursor from "./layout/PreciseCursor";
-import TopNavigation from "./layout/TopNavigation";
+import { createRootRoute, createRoute, createRouter, Outlet } from "@tanstack/react-router";
+import { AuthProvider } from "./lib/auth/provider";
+import { PreviewHostBridge } from "./components/preview-host-bridge";
+import { Toaster } from "sonner";
+import { SiteNav } from "./components/site-nav";
+import { LandingHero } from "./components/landing-hero";
+import { EraSection } from "./components/era-section";
+import { AboutSection } from "./components/about-section";
+import { MusicSection } from "./components/music-section";
+import { GallerySection } from "./components/gallery-section";
+import { ShowsSection } from "./components/shows-section";
+import { ContactSection } from "./components/contact-section";
+import { SiteFooter } from "./components/site-footer";
+import { AppErrorComponent } from "./lib/error-component";
 
-import LandingHero from "./modules/LandingHero";
-import CareerTimeline from "./modules/CareerTimeline";
-import DiscographyStudio from "./modules/DiscographyStudio";
-import EditorialShowcase from "./modules/EditorialShowcase";
-import TourGrid from "./modules/LiveTourGrid";
-import MerchEdition from "./modules/ExclusiveMerch";
-import PhilanthropyWork from "./modules/PhilanthropyWork";
-import ContactFooter from "./modules/ContactFooter";
+export const RootRoute = createRootRoute({
+  component: () => (
+    <div className="bg-bg text-fg font-sans min-h-screen selection:bg-accent selection:text-accent-fg">
+      <PreviewHostBridge />
+      <AuthProvider>
+        <Outlet />
+      </AuthProvider>
+      <Toaster
+        theme="dark"
+        position="bottom-center"
+        toastOptions={{
+          style: {
+            background: "#1c1014",
+            color: "#f4ece4",
+            border: "1px solid rgba(244,236,228,0.12)",
+          },
+        }}
+      />
+    </div>
+  ),
+});
 
-export default function App() {
+function Home() {
   return (
-    <SmoothScroll>
-      <GrainEffect />
-      <PreciseCursor />
-      <TopNavigation />
-      
+    <>
+      <a
+        href="#music"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:bg-accent focus:px-3 focus:py-2 focus:text-accent-fg"
+      >
+        Skip to music
+      </a>
+      <div className="page-grain" aria-hidden="true" />
+      <SiteNav />
       <main>
         <LandingHero />
-        <CareerTimeline />
-        <DiscographyStudio />
-        <EditorialShowcase />
-        <TourGrid />
-        <MerchEdition />
-        <PhilanthropyWork />
-        <ContactFooter />
+        <EraSection />
+        <AboutSection />
+        <MusicSection />
+        <GallerySection />
+        <ShowsSection />
+        <ContactSection />
       </main>
-    </SmoothScroll>
+      <SiteFooter />
+    </>
   );
+}
+
+export const IndexRoute = createRoute({
+  getParentRoute: () => RootRoute,
+  path: "/",
+  component: Home,
+});
+
+export const routeTree = RootRoute.addChildren([IndexRoute]);
+
+export function getRouter() {
+  return createRouter({ routeTree, defaultErrorComponent: AppErrorComponent });
 }
