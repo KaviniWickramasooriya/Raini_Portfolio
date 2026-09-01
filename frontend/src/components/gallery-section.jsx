@@ -31,8 +31,16 @@ export function GallerySection() {
         </div>
         <div className="triptych mx-auto mt-14 max-w-3xl">
           {davikaStrips.map((s, i) => (
-            <figure key={i} className="overflow-hidden bg-elevated">
-              <img src={s.src} alt="Raini Charuka, triptych portrait" style={{ objectPosition: s.pos }} />
+            <figure
+              key={i}
+              className={`overflow-hidden bg-elevated ${i === 1 ? "triptych-center-item" : ""}`}
+            >
+              <img
+                src={s.src}
+                alt="Raini Charuka, triptych portrait"
+                style={{ objectPosition: s.pos }}
+                className={i === 1 ? "triptych-center-img" : ""}
+              />
             </figure>
           ))}
         </div>

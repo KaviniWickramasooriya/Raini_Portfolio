@@ -1,14 +1,29 @@
 import img1 from "../assets/photos/photo_1_2026-08-31_11-53-53.jpg";
+import imge1 from "../assets/photos/photo_1_2026-08-31_18-59-49.jpg";
 import img2 from "../assets/photos/photo_2_2026-08-31_11-53-53.jpg";
 import img3 from "../assets/photos/photo_3_2026-08-31_11-53-53.jpg";
 import imge2 from "../assets/photos/photo_2_2026-08-31_18-59-49.jpg";
+import img4 from "../assets/photos/photo_4_2026-08-31_11-53-53.jpg";
+import imge4 from "../assets/photos/photo_4_2026-08-31_18-59-49.jpg";
 import img5 from "../assets/photos/photo_5_2026-08-31_11-53-53.jpg";
+import imge5 from "../assets/photos/photo_5_2026-08-31_18-59-49.jpg";
+import imge7 from "../assets/photos/photo_7_2026-08-31_11-53-53.jpg";
+import img7 from "../assets/photos/photo_7_2026-08-31_18-59-49.jpg";
 import img8 from "../assets/photos/photo_8_2026-08-31_18-59-49.jpg";    
 import img9 from "../assets/photos/photo_9_2026-08-31_11-53-53.jpg";
+import imge9 from "../assets/photos/photo_9_2026-08-31_18-59-49.jpg";
+import imge10 from "../assets/photos/photo_10_2026-08-31_18-59-49.jpg";
+import img11 from "../assets/photos/photo_11_2026-08-31_18-59-49.jpg";
 import img12 from "../assets/photos/photo_12_2026-08-31_11-53-53.jpg";
+import imge12 from "../assets/photos/photo_12_2026-08-31_18-59-49.jpg";
+import imge13 from "../assets/photos/photo_13_2026-08-31_18-59-50.jpg";
+import imge14 from "../assets/photos/photo_14_2026-08-31_18-59-50.jpg";
+import img16 from "../assets/photos/photo_16_2026-08-31_18-59-50.jpg";
 import img18 from "../assets/photos/photo_18_2026-08-31_18-59-50.jpg";
 import img19 from "../assets/photos/photo_19_2026-08-31_18-59-50.jpg";
 import img21 from "../assets/photos/WhatsApp Image 2026-08-31 at 09.29.11.jpeg";
+import img22 from "../assets/photos/WhatsApp Image 2026-08-31 at 09.29.12.jpeg";
+import img23 from "../assets/photos/ab6761610000e5eb4790ebbcb505c1c279068fa9.jfif";
 
 // Audio Imports from src/assets/audio/
 import audioChanchala from "../assets/audio/Chanchala_Dase_Maya_Raini_Charuka_Sarigama_lk.mp3";
@@ -50,7 +65,7 @@ export const photos = {
   aboutCenter: img21,
   eraCenter: img9,
   music: img18,
-  contact: img19,
+  contact: img16,
 };
 
 export const bio = {
@@ -151,27 +166,28 @@ export const tracks = [
 
 export const eras = [
   { year: "", title: "Debut", photo: img12, height: "65%" },
-  { year: "", title: "Teledrama Era", photo: img1, height: "75%" },
+  { year: "", title: "Teledrama Era", photo: img7, height: "75%" },
   { year: "", title: "Chanchala Daase", photo: img3, height: "85%" },
-  { year: "", title: "Silver Screen", photo: img12, height: "92%" },
-  { year: "", title: "The Voice", photo: img18, height: "80%" },
-  { year: "", title: "Present", photo: img19, height: "70%" },
+  { year: "", title: "Silver Screen", photo: img3, height: "92%" },
+  { year: "", title: "The Voice", photo: img22, height: "80%" },
+  { year: "", title: "Present", photo: img23, height: "70%" },
 ];
 
 export const davikaStrips = [
-  { src: img1, pos: "center top" },
-  { src: img19, pos: "center center" },
-  { src: img5, pos: "center bottom" },
+  { src: imge5, pos: "center top" },
+  { src: imge9, pos: "center center" },
+  { src: img11, pos: "center bottom" },
 ];
 
 export const gallery = [
-  { src: img19, alt: "Live concert stage production" },
-  { src: img12, alt: "Backstage green room session" },
-  { src: img9, alt: "Television production appearance" },
-  { src: img18, alt: "Acoustic unplugged broadcast" },
-  { src: img5, alt: "Master studio vocal recording" },
-  { src: img1, alt: "Editorial portrait concept" },
-  { src: img2, alt: "Promotional concept shoot" },
+  { src: imge10, alt: "Live concert stage production" },
+  { src: imge13, alt: "Backstage green room session" },
+  { src: img1, alt: "Television production appearance" },
+  { src: imge4, alt: "Acoustic unplugged broadcast" },
+  { src: img3, alt: "Master studio vocal recording" },
+  { src: imge7, alt: "Editorial portrait concept" },
+  { src: imge12, alt: "Promotional concept shoot" },
+  { src: imge14, alt: "Promotional concept shoot" },
 ];
 
 export const shows = [

@@ -32,15 +32,15 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-wine-deep">
+    <section id="contact" className="contact-section relative overflow-hidden bg-wine-deep">
       <img
         src={photos.contact}
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute inset-y-0 right-0 hidden h-full w-1/2 object-cover opacity-35 md:block"
-        style={{ objectPosition: "center 15%", maskImage: "linear-gradient(to left, black, transparent)" }}
+        className="contact-bg-image pointer-events-none absolute inset-0 h-full w-full object-cover"
       />
-      <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-24 sm:px-6 sm:py-32 lg:grid-cols-2">
+      <div className="contact-overlay absolute inset-0 bg-wine-deep/80 backdrop-blur-[1px]" />
+      <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-24 sm:px-6 sm:py-32 lg:grid-cols-2 items-center">
         <div>
           <p className="kicker">Bookings</p>
           <h2 className="display-lg mt-3 text-fg">WRITE TO US</h2>
@@ -63,7 +63,7 @@ export function ContactSection() {
         </div>
         <form
           onSubmit={onSubmit}
-          className="rounded-[var(--radius-xl)] bg-surface/80 p-5 shadow-[var(--shadow-border)] backdrop-blur-sm sm:p-7"
+          className="rounded-[var(--radius-xl)] bg-surface/90 p-5 shadow-[var(--shadow-border)] backdrop-blur-md sm:p-7"
         >
           <label className="block text-xs uppercase tracking-[0.18em] text-muted">
             Name
