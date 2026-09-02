@@ -23,18 +23,32 @@ export function AboutSection() {
         <span className="block">ACTRESS</span>
       </p>
       <div className="relative z-10 flex min-h-svh flex-col items-center justify-end pb-12 pt-28 sm:pb-16">
-        <img
-          src={photos.aboutCenter}
-          alt="Raini Charuka, full-length portrait"
-          className="about-figure"
-        />
+        <div className="relative">
+          <img
+            src={photos.aboutCenter}
+            alt=""
+            aria-hidden="true"
+            className="about-figure-reflection absolute inset-0 scale-x-[-1] blur-md opacity-30 select-none pointer-events-none translate-x-6 sm:translate-x-12"
+          />
+          <img
+            src={photos.aboutCenter}
+            alt=""
+            aria-hidden="true"
+            className="about-figure-reflection absolute inset-0 blur-md opacity-30 select-none pointer-events-none -translate-x-6 sm:-translate-x-12"
+          />
+          <img
+            src={photos.aboutCenter}
+            alt="Raini Charuka, full-length portrait"
+            className="about-figure relative z-10"
+          />
+        </div>
       </div>
       <div className="relative z-10 mx-auto -mt-20 max-w-3xl px-6 pb-24 text-center sm:-mt-28">
         <p className="kicker">{bio.kicker}</p>
-        <h2 id="about-title" className="serif-title mt-4 text-fg">
+        <h2 id="about-title" className="serif-title mt-4 text-fg text-center sm:text-center">
           {bio.title}
         </h2>
-        <div className="mt-8 space-y-5 text-pretty text-left text-[0.95rem] leading-relaxed text-muted sm:text-center">
+        <div className="mt-8 space-y-5 text-pretty text-center text-[0.95rem] leading-relaxed text-muted sm:text-center">
           {bio.paragraphs.map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>
           ))}

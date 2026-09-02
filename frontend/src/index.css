@@ -366,7 +366,7 @@
     }
   }
 
-  /* ——— ABOUT POSTER STYLING & MOBILE FIXES (Explicitly ensuring the silver SINGER/ACTRESS text displays correctly and scales properly on mobile view) ——— */
+  /* ——— ABOUT POSTER STYLING & FADED REFLECTION SIDES ——— */
   .about-poster {
     position: relative;
     isolation: isolate;
@@ -417,6 +417,43 @@
     padding: 0 1rem;
   }
 
+  /* Container wrapper for the center portrait with horizontal blurred reflection/fade gradients */
+  .about-figure-container {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .about-figure-container::before,
+  .about-figure-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 25%;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  /* Left Faded Reflection / Dark Gradient Overlay */
+  .about-figure-container::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-bg) 0%, color-mix(in oklab, var(--color-bg) 80%, transparent) 60%, transparent 100%);
+    backdrop-filter: blur(2px);
+    mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  }
+
+  /* Right Faded Reflection / Dark Gradient Overlay */
+  .about-figure-container::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-bg) 0%, color-mix(in oklab, var(--color-bg) 80%, transparent) 60%, transparent 100%);
+    backdrop-filter: blur(2px);
+    mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  }
+
   .about-figure {
     position: relative;
     z-index: 3;
@@ -442,12 +479,12 @@
     }
   }
 
-  /* ——— CONTACT SECTION STYLING (Balanced face framing) ——— */
+  /* ——— CONTACT SECTION STYLING ——— */
   .contact-section {
     isolation: isolate;
   }
   .contact-bg-image {
-    object-position: center 38%;
+    object-position: center 30%;
     opacity: 0.65;
     filter: saturate(0.8) contrast(1.05);
   }
@@ -464,7 +501,7 @@
   .era-script {
     position: absolute;
     z-index: 4;
-    top: 42%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-12deg);
     font-family: var(--font-script);
@@ -542,25 +579,39 @@
   }
 
   @media (max-width: 759px) {
+    .era-header-mobile {
+      top: 0.5rem;
+    }
+    .era-script {
+      top: 48%;
+    }
     .era-strips-container {
-      inset: 20% 3% 8%;
+      inset: 6% 3% 8%;
     }
     .era-strips {
       gap: 0.2rem;
     }
+    .era-strip:nth-child(2),
     .era-strip:nth-child(3),
-    .era-strip:nth-child(4) {
+    .era-strip:nth-child(4),
+    .era-strip:nth-child(5) {
       display: none;
     }
     .era-strip:nth-child(1) img {
       object-position: center 12%;
     }
-    .era-strip:nth-child(2) img {
+    .era-strip:nth-child(6) img {
       object-position: center 12%;
     }
+    .era-captions-row {
+      position: absolute;
+      inset-x: 0;
+      bottom: -1.5rem;
+      padding: 0 0.5rem;
+    }
     .era-center {
-      height: min(62svh, 560px);
-      max-width: min(62vw, 270px);
+      height: min(65svh, 580px);
+      max-width: min(65vw, 290px);
     }
   }
 

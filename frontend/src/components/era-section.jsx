@@ -3,9 +3,9 @@ import { eras, photos } from "@/lib/content";
 export function EraSection() {
   return (
     <section id="eras" className="era" aria-labelledby="eras-title">
-      <div className="pointer-events-none absolute inset-x-0 top-16 z-10 px-4 text-center sm:top-20">
+      <div className="era-header-mobile pointer-events-none absolute inset-x-0 top-12 z-10 px-4 text-center sm:top-20">
         <p className="kicker">Always in our hearts</p>
-        <h2 id="eras-title" className="mt-3 font-serif text-3xl text-fg sm:text-4xl">
+        <h2 id="eras-title" className="mt-2 font-serif text-2xl text-fg sm:mt-3 sm:text-4xl">
           From then, and forever
         </h2>
       </div>
