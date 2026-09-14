@@ -45,7 +45,7 @@ export function GallerySection() {
           ))}
         </div>
       </div>
-      <div className="mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-2 px-2 sm:grid-cols-3 sm:gap-3 sm:px-6 md:grid-cols-4">
+      {/* <div className="mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-2 px-2 sm:grid-cols-3 sm:gap-3 sm:px-6 md:grid-cols-4">
         {gallery.map((g, i) => (
           <button
             key={g.src}
@@ -109,7 +109,7 @@ export function GallerySection() {
             <ChevronRight className="size-8" />
           </button>
         </div>
-      ) : null}
+      ) : null} */}
     </section>
   );
 }

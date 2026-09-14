@@ -1,80 +1,85 @@
-import { artist, photos } from "@/lib/content";
+import { photos } from "@/lib/content";
 import { TrackPlayer } from "@/components/track-player";
 
 export function LandingHero() {
   return (
-    <section id="top" className="hero" aria-label="Raini Charuka">
+    <section id="top" className="hero hero-mobile-mode" aria-label="Raini Charuka">
+      {/* Mobile Full Background Ghost Image */}
       <img
         src={photos.ghost}
         alt=""
-        className="hero-ghost-motion"
+        className="hero-ghost-mobile md:hidden"
         aria-hidden="true"
       />
-      <img
-        src={photos.ghost}
-        alt=""
-        className="hero-ghost rise"
-        aria-hidden="true"
-        fetchPriority="high"
-      />
-      
-      <div className="hero-name-split" aria-hidden="true">
-        <span className="hero-name-part hero-name-left">RAI</span>
-        <span className="hero-name-part hero-name-right">NI</span>
+
+      {/* Desktop Background Monogram Name (Large Screens Only) */}
+      <div className="hero-name-full hidden md:flex" aria-hidden="true">
+        <span className="hero-name-text">
+          RAINI<span className="block">CHARUKA</span>
+        </span>
       </div>
 
-      <div className="hero-title-badge rise-2">
-        <span>Singer</span>
-        <span className="hero-dot" />
-        <span>Actress</span>
-        <span className="hero-dot" />
-        <span>Songwriter</span>
+      {/* Mobile-Only Header Stack */}
+      <div className="hero-mobile-header-stack md:hidden">
+        <p className="hero-mobile-kicker">THE VOICE OF</p>
+        <div className="hero-title-badge-mobile">
+          <span>SINGER</span>
+          <span className="hero-dot" />
+          <span>PERFORMER</span>
+          <span className="hero-dot" />
+          <span>SONGWRITER</span>
+        </div>
       </div>
       
       <div className="hero-stage">
+        {/* Left Side Figure (Desktop Only) */}
         <img
           src={photos.heroLeft}
           alt=""
-          className="figure-side figure-left rise-3"
+          className="figure-side figure-left rise-3 hidden md:block"
           aria-hidden="true"
         />
-        <img
-          src={photos.heroCenter}
-          alt="Raini Charuka standing in a white evening dress"
-          className="figure-center rise-2"
-          fetchPriority="high"
-        />
+        
+        {/* Mobile Central Image & Track Player */}
+        <div className="flex flex-col items-center w-full md:contents">
+          <img
+            src={photos.heroCenter}
+            alt="Raini Charuka standing in a luxury portrait"
+            className="figure-center rise-2 md:hidden"
+            fetchPriority="high"
+          />
+
+          {/* Desktop Central Image & Badge Stack shifted upward to raise both image and badge */}
+          <div className="hidden md:flex flex-col items-center relative z-40 pb-6">
+            <img
+              src={photos.heroCenter}
+              alt="Raini Charuka standing in a luxury portrait"
+              className="figure-center-desktop rise-2"
+              fetchPriority="high"
+            />
+            {/* Desktop Badge placed below the 3 figures */}
+            <div className="hero-title-badge-desktop rise-2 mt-6">
+              <span>Singer</span>
+              <span className="hero-dot" />
+              <span>Performer</span>
+              <span className="hero-dot" />
+              <span>Songwriter</span>
+            </div>
+          </div>
+          
+          {/* Mobile-Only Integrated Track Player Container */}
+          <div className="w-[88%] max-w-[320px] mx-auto mt-[-0.4rem] mb-[-2.8rem] md:hidden relative z-20">
+            <TrackPlayer compact />
+          </div>
+        </div>
+
+        {/* Right Side Figure (Desktop Only) */}
         <img
           src={photos.heroRight}
           alt=""
-          className="figure-side figure-right rise-4"
+          className="figure-side figure-right rise-4 hidden md:block"
           aria-hidden="true"
         />
-      </div>
-
-      <div className="pointer-events-none absolute inset-x-0 top-20 z-10 flex justify-center px-4 sm:top-24">
-        <p className="kicker rise text-center">The voice of</p>
-      </div>
-
-      {/* Styled Desktop Meta Cards positioned nicely around the central artist stage */}
-      <div className="hero-meta-left rise-3">
-        <div className="hero-meta-card">
-          <span className="hero-meta-label">Profile</span>
-          <span className="hero-meta-value accent">Featured Artist</span>
-          <span className="hero-meta-sub">Exclusive Portfolio</span>
-        </div>
-      </div>
-
-      <div className="hero-meta-right rise-4">
-        <div className="hero-meta-card text-right">
-          <span className="hero-meta-label">Location</span>
-          <span className="hero-meta-value">Colombo, {artist.country}</span>
-          <span className="hero-meta-sub accent">Est. 2009</span>
-        </div>
-      </div>
-
-      <div className="hero-player rise-5">
-        <TrackPlayer compact />
       </div>
     </section>
   );

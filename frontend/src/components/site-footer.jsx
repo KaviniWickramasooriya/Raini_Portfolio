@@ -1,92 +1,126 @@
 import { artist } from "@/lib/content";
+import { Music, Mail, ArrowUpRight, Globe, Share2, MessageCircle, Video } from "lucide-react";
 
-function SpotifyIcon({ className }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="currentColor">
-      <path d="M12 1.5C6.2 1.5 1.5 6.2 1.5 12S6.2 22.5 12 22.5 22.5 17.8 22.5 12 17.8 1.5 12 1.5Zm4.86 15.16a.66.66 0 0 1-.9.22c-2.47-1.51-5.58-1.85-9.24-1.01a.66.66 0 1 1-.3-1.29c4.02-.92 7.45-.52 10.2 1.16a.66.66 0 0 1 .24.92Zm1.3-2.9a.82.82 0 0 1-1.13.27c-2.83-1.74-7.14-2.25-10.48-1.23a.82.82 0 1 1-.48-1.57c3.82-1.16 8.55-.6 11.8 1.4a.82.82 0 0 1 .28 1.13Zm.12-3.02c-3.4-2.02-9.01-2.2-12.25-1.22a.99.99 0 1 1-.57-1.9c3.73-1.12 10.02-.9 13.95 1.42a.99.99 0 1 1-1.13 1.7Z" />
-    </svg>
-  );
-}
-
-function InstagramIcon({ className }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6">
-      <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17.4" cy="6.6" r="0.8" fill="currentColor" stroke="none" />
-    </svg>
-  );
-}
-
-function YoutubeIcon({ className }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="currentColor">
-      <path d="M22.5 7.2a3.1 3.1 0 0 0-2.2-2.2C18.4 4.6 12 4.6 12 4.6s-6.4 0-8.3.4A3.1 3.1 0 0 0 1.5 7.2 32 32 0 0 0 1.1 12a32 32 0 0 0 .4 4.8 3.1 3.1 0 0 0 2.2 2.2c1.9.4 8.3.4 8.3.4s6.4 0 8.3-.4a3.1 3.1 0 0 0 2.2-2.2 32 32 0 0 0 .4-4.8 32 32 0 0 0-.4-4.8ZM10 15.2V8.8l5.3 3.2L10 15.2Z" />
-    </svg>
-  );
-}
-
-function FacebookIcon({ className }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="currentColor">
-      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-    </svg>
-  );
-}
-
-function TwitterXIcon({ className }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-    </svg>
-  );
-}
-
-function TiktokIcon({ className }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="currentColor">
-      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3.2 15.6a6.34 6.34 0 0 0 10.86 4.43v-7.22a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.24-.24Z"/>
-    </svg>
-  );
-}
-
-const social = [
-  { href: "https://www.facebook.com/rainicharukagoonatillake/", label: "Facebook", Icon: FacebookIcon },
-  { href: "https://www.instagram.com/rainicharuka", label: "Instagram", Icon: InstagramIcon },
-  { href: "https://x.com/RainiCharuka", label: "X", Icon: TwitterXIcon },
-  { href: "https://www.youtube.com/RainiCharuka", label: "YouTube", Icon: YoutubeIcon },
-  { href: "https://www.tiktok.com/@rainicharuka?lang=en", label: "TikTok", Icon: TiktokIcon },
-  { href: "https://open.spotify.com/artist/560riUcFnPmvtt6XYVLMa9", label: "Spotify", Icon: SpotifyIcon },
+const socialLinks = [
+  { label: "Spotify", href: artist.spotify, icon: Music },
+  { label: "Instagram", href: artist.instagram, icon: Share2 },
+  { label: "Facebook", href: "https://www.facebook.com/rainicharukagoonatillake/", icon: Globe },
+  { label: "TikTok", href: "https://www.tiktok.com/@rainicharuka?lang=en", icon: Music },
+  { label: "X (Twitter)", href: "https://x.com/RainiCharuka", icon: MessageCircle },
+  { label: "YouTube", href: artist.youtube, icon: Video },
 ];
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-line bg-bg">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 py-12 sm:px-6">
-        <p className="font-display text-4xl tracking-[0.2em] text-fg">RAINI</p>
-        <p className="script text-3xl">Charuka</p>
-        <nav className="flex flex-wrap items-center justify-center gap-2" aria-label="Social">
-          {social.map(({ href, label, Icon }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={label}
-              className="inline-flex size-11 items-center justify-center text-muted transition-colors hover:text-accent"
-            >
-              <Icon className="size-5" />
+    <footer className="relative bg-bg border-t border-line overflow-hidden isolation text-fg">
+      {/* Ambient background glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] sm:w-[800px] sm:h-[300px] bg-[radial-gradient(ellipse_at_center,color-mix(in_oklab,var(--color-wine)_20%,transparent)_0%,transparent_70%)] pointer-events-none blur-3xl z-0" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-20 lg:px-8">
+        
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 sm:gap-12 lg:gap-16 items-start pb-12 sm:pb-16 border-b border-line">
+          
+          {/* Brand & Bio column */}
+          <div className="md:col-span-5 space-y-4 sm:space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
+            <a href="/" className="inline-flex items-center gap-3 group">
+              <img
+                src={artist.logo}
+                alt="RC Logo"
+                className="size-11 sm:size-12 object-contain rounded-full border border-accent/30 shadow-md group-hover:border-accent transition-colors"
+              />
+              <span className="font-display text-2xl tracking-[0.2em] text-fg sm:text-3xl">
+                {artist.first}
+                <span className="text-accent"> {artist.last.toUpperCase()}</span>
+              </span>
             </a>
-          ))}
-        </nav>
-        <div className="flex flex-col items-center gap-1 text-center">
-          <p className="text-xs tracking-wide text-subtle">
-            © {new Date().getFullYear()} {artist.legal}. All rights reserved.
-          </p>
-          <p className="text-[0.65rem] uppercase tracking-[0.22em] text-subtle">
-            Website developed by <span className="text-accent">adnavra</span>
-          </p>
+            <p className="font-sans text-xs sm:text-sm text-muted max-w-sm leading-relaxed font-light">
+              Official portfolio and digital sanctuary for Sri Lankan recording artist, television coach, and performer Raini Charuka Goonatillake.
+            </p>
+            <div className="pt-1 sm:pt-2">
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-[var(--radius-sm)] bg-surface border border-accent/30 px-5 py-2.5 font-sans text-xs uppercase tracking-[0.2em] text-accent font-medium hover:bg-elevated hover:border-accent transition-all shadow-lg"
+              >
+                <span>Management Enquiries</span>
+                <ArrowUpRight className="size-3.5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Direct Links Column */}
+          <div className="md:col-span-3 space-y-3 sm:space-y-4 text-center md:text-left">
+            <p className="kicker tracking-[0.3em] uppercase text-accent font-semibold text-xs">Navigation</p>
+            <ul className="space-y-2.5 sm:space-y-3 font-sans text-xs uppercase tracking-[0.2em] flex flex-col items-center md:items-start">
+              <li>
+                <a href="/" className="text-muted hover:text-fg transition-colors py-1 inline-block">Home</a>
+              </li>
+              <li>
+                <a href="/story" className="text-muted hover:text-fg transition-colors py-1 inline-block">The Story</a>
+              </li>
+              <li>
+                <a href="/music" className="text-muted hover:text-fg transition-colors py-1 inline-block">Music Catalogue</a>
+              </li>
+              <li>
+                <a href="/shows" className="text-muted hover:text-fg transition-colors py-1 inline-block">Shows & Schedule</a>
+              </li>
+              <li>
+                <a href="/gallery" className="text-muted hover:text-fg transition-colors py-1 inline-block">Visual Gallery</a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Socials & Management Direct Column */}
+          <div className="md:col-span-4 space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
+            <div className="w-full">
+              <p className="kicker tracking-[0.3em] uppercase text-accent font-semibold text-xs mb-2.5 sm:mb-3">Management</p>
+              <a
+                href={`mailto:${artist.email}`}
+                className="inline-flex items-center justify-center md:justify-start gap-2 font-serif text-base sm:text-xl text-fg hover:text-accent transition-colors underline underline-offset-4 break-all"
+              >
+                <Mail className="size-4 text-accent shrink-0" />
+                <span>{artist.email}</span>
+              </a>
+              <p className="font-sans text-xs text-muted mt-2">
+                For press, concert bookings, and collaboration requests.
+              </p>
+            </div>
+
+            <div className="w-full">
+              <p className="kicker tracking-[0.3em] uppercase text-accent font-semibold text-xs mb-2.5 sm:mb-3">Connect Online</p>
+              <div className="flex flex-wrap justify-center md:justify-start gap-2.5">
+                {socialLinks.map((social) => {
+                  const Icon = social.icon;
+                  return (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={social.label}
+                      className="size-10 rounded-[var(--radius-sm)] bg-surface border border-line flex items-center justify-center text-muted hover:text-accent hover:border-accent/40 transition-colors shadow-sm"
+                    >
+                      <Icon className="size-4" />
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
         </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p className="font-sans text-[0.65rem] sm:text-[0.7rem] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-subtle">
+            © {new Date().getFullYear()} Raini Charuka. All rights reserved.
+          </p>
+          <div className="flex items-center gap-3 sm:gap-6 font-sans text-[0.65rem] sm:text-[0.7rem] uppercase tracking-[0.18em] sm:tracking-[0.2em] text-subtle flex-wrap justify-center">
+            <span>Colombo, Sri Lanka</span>
+            <span className="hidden sm:inline">·</span>
+            <span>Website developed by <a href="https://adnavra.com" target="_blank" rel="noreferrer" className="text-accent hover:underline underline-offset-4">Adnavra</a></span>
+          </div>
+        </div>
+
       </div>
     </footer>
   );

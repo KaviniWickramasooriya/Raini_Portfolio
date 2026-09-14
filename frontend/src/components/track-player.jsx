@@ -11,10 +11,9 @@ export function TrackPlayer({ compact = false, className }) {
   const audioRef = useRef(null);
   const track = tracks[index];
 
-  // Initialize or update audio element source on track change
   useEffect(() => {
     if (!audioRef.current) {
-      audioRef.current = new Audio(track.audioUrl || "https://p.scdn.co/mp3-preview/default"); // Fallback preview stream
+      audioRef.current = new Audio(track.audioUrl || "https://p.scdn.co/mp3-preview/default");
     } else {
       audioRef.current.src = track.audioUrl || "https://p.scdn.co/mp3-preview/default";
     }
@@ -40,7 +39,6 @@ export function TrackPlayer({ compact = false, className }) {
     };
   }, [index]);
 
-  // Handle play/pause toggle
   useEffect(() => {
     if (!audioRef.current) return;
     if (playing) {
@@ -74,89 +72,79 @@ export function TrackPlayer({ compact = false, className }) {
   return (
     <div
       className={cn(
-        "rounded-[var(--radius-lg)] bg-surface/80 p-4 shadow-[var(--shadow-border)] backdrop-blur-sm",
+        "rounded-[20px] bg-[#120a0e]/95 p-3 sm:p-3.5 shadow-[0_15px_40px_rgba(0,0,0,0.7)] border border-[color-mix(in_oklab,var(--color-accent)_22%,transparent)] backdrop-blur-2xl text-left",
         className,
       )}
     >
-      <div className="flex items-center gap-3">
-        {!compact ? (
+      <div className="flex items-center gap-2.5 mb-2">
+        <div className="relative size-9 shrink-0 overflow-hidden rounded-md border border-[color-mix(in_oklab,var(--color-accent)_30%,transparent)] shadow-sm">
           <img
             src={track.cover}
-            alt=""
-            className="size-12 shrink-0 rounded-[var(--radius-sm)] object-cover"
+            alt={track.title}
+            className="size-full object-cover"
           />
-        ) : null}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+        </div>
         <div className="min-w-0 flex-1">
-          <p className="truncate font-serif text-lg leading-tight text-fg">{track.title}</p>
-          <p className="truncate text-xs text-muted">
-            Raini Charuka · {track.year}
+          <p className="truncate font-serif text-sm sm:text-base tracking-wide text-fg font-medium">{track.title}</p>
+          <p className="truncate font-sans text-[0.58rem] text-accent/80 tracking-wider">
+            {track.note || `Raini Charuka · ${track.year}`}
           </p>
         </div>
-        {playing ? (
-          <span className="flex h-4 items-end gap-0.5" aria-hidden="true">
-            {[0, 1, 2, 3].map((i) => (
-              <span
-                key={i}
-                className="eq-bar inline-block w-0.5 rounded-full bg-accent"
-                style={{
-                  height: 14,
-                  animationDelay: `${i * 120}ms`,
-                }}
-              />
-            ))}
-          </span>
-        ) : null}
       </div>
-      <div className="mt-3">
-        <div className="h-px w-full overflow-hidden bg-fg/15">
+
+      <div className="space-y-1 mb-2.5">
+        <div className="h-[2px] w-full overflow-hidden rounded-full bg-[color-mix(in_oklab,var(--color-fg)_12%,transparent)]">
           <div
-            className="h-full origin-left bg-accent transition-all duration-100"
+            className="h-full origin-left bg-accent transition-all duration-100 rounded-full"
             style={{ transform: `scaleX(${pct / 100})` }}
           />
         </div>
-        <div className="mt-1.5 flex justify-between font-sans text-[0.65rem] tabular-nums tracking-wider text-subtle">
+        <div className="flex justify-between font-sans text-[0.52rem] tabular-nums tracking-widest text-muted/70">
           <span>{fmt(elapsed)}</span>
           <span>{track.duration}</span>
         </div>
       </div>
-      <div className="mt-1 flex items-center justify-center gap-3">
+
+      <div className="flex items-center justify-center gap-4 mb-1.5">
         <button
           type="button"
-          className="inline-flex size-11 items-center justify-center text-muted transition-colors hover:text-fg"
+          className="inline-flex size-7 items-center justify-center text-muted transition-colors hover:text-accent"
           aria-label="Previous track"
           onClick={() => jump(-1)}
         >
-          <SkipBack className="size-4" />
+          <SkipBack className="size-3.5" />
         </button>
         <button
           type="button"
-          className="inline-flex size-12 items-center justify-center rounded-full bg-accent text-accent-fg transition-transform duration-150 active:scale-[0.96]"
+          className="inline-flex size-10 items-center justify-center rounded-full bg-accent text-accent-fg transition-transform duration-150 active:scale-[0.96] shadow-lg hover:brightness-105"
           aria-label={playing ? "Pause" : "Play"}
           onClick={toggle}
         >
           {playing ? (
-            <Pause className="size-5 fill-current" />
+            <Pause className="size-3.5 fill-current" />
           ) : (
-            <Play className="ml-0.5 size-5 fill-current" />
+            <Play className="ml-0.5 size-3.5 fill-current" />
           )}
         </button>
         <button
           type="button"
-          className="inline-flex size-11 items-center justify-center text-muted transition-colors hover:text-fg"
+          className="inline-flex size-7 items-center justify-center text-muted transition-colors hover:text-accent"
           aria-label="Next track"
           onClick={() => jump(1)}
         >
-          <SkipForward className="size-4" />
+          <SkipForward className="size-3.5" />
         </button>
       </div>
+
       <a
         href={track.spotify}
         target="_blank"
         rel="noreferrer"
-        className="mt-1 flex min-h-10 items-center justify-center gap-2 text-[0.65rem] uppercase tracking-[0.22em] text-muted transition-colors hover:text-accent"
+        className="flex h-5 items-center justify-center gap-1 text-[0.55rem] uppercase tracking-[0.25em] text-accent/75 transition-colors hover:text-accent font-medium border-t border-[color-mix(in_oklab,var(--color-accent)_12%,transparent)] pt-1.5"
       >
         Listen on Spotify
-        <ExternalLink className="size-3" />
+        <ExternalLink className="size-2.5" />
       </a>
     </div>
   );

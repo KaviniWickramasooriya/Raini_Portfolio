@@ -37,7 +37,7 @@ export function ContactSection() {
         src={photos.contact}
         alt=""
         aria-hidden="true"
-        className="contact-bg-image pointer-events-none absolute inset-0 h-full w-full object-cover"
+        className="contact-bg-image pointer-events-none absolute inset-0 h-full w-full object-cover object-[center_50%]"
       />
       <div className="contact-overlay absolute inset-0 bg-wine-deep/80 backdrop-blur-[1px]" />
       <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-24 sm:px-6 sm:py-32 lg:grid-cols-2 items-center">

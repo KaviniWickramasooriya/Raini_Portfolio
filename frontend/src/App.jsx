@@ -11,6 +11,11 @@ import { GallerySection } from "./components/gallery-section";
 import { ShowsSection } from "./components/shows-section";
 import { ContactSection } from "./components/contact-section";
 import { SiteFooter } from "./components/site-footer";
+import { StorySection } from "./components/story-page";
+import { MusicPage } from "./components/music-page";
+import { ContactPage } from "./components/contact-page";
+import { ShowsPage } from "./components/shows-page";
+import { GalleryPage } from "./components/gallery-page";
 import { AppErrorComponent } from "./lib/error-component";
 
 export const RootRoute = createRootRoute({
@@ -60,13 +65,108 @@ function Home() {
   );
 }
 
+function StoryPageRoute() {
+  return (
+    <>
+      <div className="page-grain" aria-hidden="true" />
+      <SiteNav />
+      <main>
+        <StorySection />
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
+
+function MusicPageRoute() {
+  return (
+    <>
+      <div className="page-grain" aria-hidden="true" />
+      <SiteNav />
+      <main>
+        <MusicPage />
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
+
+function ContactPageRoute() {
+  return (
+    <>
+      <div className="page-grain" aria-hidden="true" />
+      <SiteNav />
+      <main>
+        <ContactPage />
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
+
+function ShowsPageRoute() {
+  return (
+    <>
+      <div className="page-grain" aria-hidden="true" />
+      <SiteNav />
+      <main>
+        <ShowsPage />
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
+
+function GalleryPageRoute() {
+  return (
+    <>
+      <div className="page-grain" aria-hidden="true" />
+      <SiteNav />
+      <main>
+        <GalleryPage />
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
+
 export const IndexRoute = createRoute({
   getParentRoute: () => RootRoute,
   path: "/",
   component: Home,
 });
 
-export const routeTree = RootRoute.addChildren([IndexRoute]);
+export const StoryRoute = createRoute({
+  getParentRoute: () => RootRoute,
+  path: "/story",
+  component: StoryPageRoute,
+});
+
+export const MusicRoute = createRoute({
+  getParentRoute: () => RootRoute,
+  path: "/music",
+  component: MusicPageRoute,
+});
+
+export const ContactRoute = createRoute({
+  getParentRoute: () => RootRoute,
+  path: "/contact",
+  component: ContactPageRoute,
+});
+
+export const ShowsRoute = createRoute({
+  getParentRoute: () => RootRoute,
+  path: "/shows",
+  component: ShowsPageRoute,
+});
+
+export const GalleryRoute = createRoute({
+  getParentRoute: () => RootRoute,
+  path: "/gallery",
+  component: GalleryPageRoute,
+});
+
+export const routeTree = RootRoute.addChildren([IndexRoute, StoryRoute, MusicRoute, ContactRoute, ShowsRoute, GalleryRoute]);
 
 export function getRouter() {
   return createRouter({ routeTree, defaultErrorComponent: AppErrorComponent });

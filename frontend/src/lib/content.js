@@ -7,23 +7,42 @@ import img4 from "../assets/photos/photo_4_2026-08-31_11-53-53.jpg";
 import imge4 from "../assets/photos/photo_4_2026-08-31_18-59-49.jpg";
 import img5 from "../assets/photos/photo_5_2026-08-31_11-53-53.jpg";
 import imge5 from "../assets/photos/photo_5_2026-08-31_18-59-49.jpg";
+import img6 from "../assets/photos/photo_6_2026-08-31_11-53-53.jpg";
 import imge7 from "../assets/photos/photo_7_2026-08-31_11-53-53.jpg";
 import img7 from "../assets/photos/photo_7_2026-08-31_18-59-49.jpg";
 import img8 from "../assets/photos/photo_8_2026-08-31_18-59-49.jpg";    
 import img9 from "../assets/photos/photo_9_2026-08-31_11-53-53.jpg";
 import imge9 from "../assets/photos/photo_9_2026-08-31_18-59-49.jpg";
+import img10 from "../assets/photos/photo_10_2026-08-31_11-53-53.jpg";
 import imge10 from "../assets/photos/photo_10_2026-08-31_18-59-49.jpg";
 import img11 from "../assets/photos/photo_11_2026-08-31_18-59-49.jpg";
 import img12 from "../assets/photos/photo_12_2026-08-31_11-53-53.jpg";
 import imge12 from "../assets/photos/photo_12_2026-08-31_18-59-49.jpg";
+import img13 from "../assets/photos/photo_13_2026-08-31_11-53-53.jpg";
 import imge13 from "../assets/photos/photo_13_2026-08-31_18-59-50.jpg";
 import imge14 from "../assets/photos/photo_14_2026-08-31_18-59-50.jpg";
+import imge15 from "../assets/photos/photo_15_2026-08-31_18-59-50.jpg";
+import imge16 from "../assets/photos/photo_16_2026-08-31_18-59-50.jpg";
+import imge17 from "../assets/photos/photo_17_2026-08-31_18-59-50.jpg";
+import imge18 from "../assets/photos/photo_18_2026-08-31_18-59-50.jpg";
+import imge19 from "../assets/photos/photo_19_2026-08-31_18-59-50.jpg";
 import img16 from "../assets/photos/photo_16_2026-08-31_18-59-50.jpg";
 import img18 from "../assets/photos/photo_18_2026-08-31_18-59-50.jpg";
 import img19 from "../assets/photos/photo_19_2026-08-31_18-59-50.jpg";
 import img21 from "../assets/photos/WhatsApp Image 2026-08-31 at 09.29.11.jpeg";
 import img22 from "../assets/photos/WhatsApp Image 2026-08-31 at 09.29.12.jpeg";
 import img23 from "../assets/photos/ab6761610000e5eb4790ebbcb505c1c279068fa9.jfif";
+import image from "../assets/photos/image.png";
+import logoImg from "../assets/photos/raini-charuka-black-gold-monogram-05.png";
+
+// Song specific cover art imports
+import coverChanchala from "../assets/photos/chanchala-daase.jpg";
+import coverNeela from "../assets/photos/neela-kandugate.jpg";
+import coverTharumini from "../assets/photos/tharumini.jpg";
+import coverAyethWarak from "../assets/photos/ayeth-warak.jpg";
+import coverNobala from "../assets/photos/nobala-ma-diha.jpg";
+import coverPichcha from "../assets/photos/pichcha-malee.jpg";
+import coverSarojani from "../assets/photos/sarojani.jpg";
 
 // Audio Imports from src/assets/audio/
 import audioChanchala from "../assets/audio/Chanchala_Dase_Maya_Raini_Charuka_Sarigama_lk.mp3";
@@ -45,27 +64,31 @@ export const artist = {
   spotify: "https://open.spotify.com/artist/560riUcFnPmvtt6XYVLMa9",
   spotifyEmbed: "https://open.spotify.com/embed/artist/560riUcFnPmvtt6XYVLMa9",
   legal: "Raini Charuka Goonatillake",
+  logo: logoImg,
 };
 
 export const nav = [
-  { label: "Eras", href: "#eras" },
-  { label: "About", href: "#about" },
-  { label: "Music", href: "#music" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Shows", href: "#shows" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "The Story", href: "/story" },
+  { label: "Music", href: "/music" },
+  { label: "Shows", href: "/shows" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const photos = {
   ghost: img19,
   heroLeft: img2,
   heroCenter: imge2,
-  heroRight: img5,
+  heroRight: imge13,
   aboutMirror: img8,
   aboutCenter: img21,
   eraCenter: img9,
   music: img18,
   contact: img16,
+  voice: imge14,
+  award: image,
+  profile: img6,
 };
 
 export const bio = {
@@ -92,7 +115,7 @@ export const tracks = [
     year: "2014",
     duration: "3:30",
     durationSec: 210,
-    cover: img19,
+    cover: coverChanchala,
     audioUrl: audioChanchala,
     spotify: artist.spotify,
   },
@@ -103,7 +126,7 @@ export const tracks = [
     year: "2009",
     duration: "4:02",
     durationSec: 242,
-    cover: img12,
+    cover: coverNeela,
     audioUrl: audioNeela,
     spotify: artist.spotify,
   },
@@ -114,7 +137,7 @@ export const tracks = [
     year: "2010",
     duration: "3:42",
     durationSec: 222,
-    cover: img9,
+    cover: coverTharumini,
     audioUrl: audioTharumini,
     spotify: artist.spotify,
   },
@@ -125,7 +148,7 @@ export const tracks = [
     year: "2023",
     duration: "3:45",
     durationSec: 225,
-    cover: img18,
+    cover: coverAyethWarak,
     audioUrl: audioAyethWarak,
     spotify: artist.spotify,
   },
@@ -136,7 +159,7 @@ export const tracks = [
     year: "2021",
     duration: "3:15",
     durationSec: 195,
-    cover: img5,
+    cover: coverNobala,
     audioUrl: audioNobalaMaDiha,
     spotify: artist.spotify,
   },
@@ -147,7 +170,7 @@ export const tracks = [
     year: "2020",
     duration: "3:50",
     durationSec: 230,
-    cover: img3,
+    cover: coverPichcha,
     audioUrl: audioPichchaMalee,
     spotify: artist.spotify,
   },
@@ -158,9 +181,108 @@ export const tracks = [
     year: "2015",
     duration: "4:10",
     durationSec: 250,
-    cover: img1,
+    cover: coverSarojani,
     audioUrl: audioSarojani,
     spotify: artist.spotify,
+  },
+];
+
+export const upcomingShows = [
+  {
+    id: "up-01",
+    type: "CONCERT",
+    year: "2026",
+    title: "Nelum Pokuna Live Spectacular",
+    location: "Nelum Pokuna Mahinda Rajapaksa Theatre · Colombo",
+    description: "An immersive evening celebrating over 15 years of musical heritage with special guest appearances.",
+    date: "12 SEP 2026",
+    image: img10,
+  },
+  {
+    id: "up-02",
+    type: "CONCERT",
+    year: "2026",
+    title: "Mahaweli Reach Grand Stage",
+    location: "Mahaweli Reach · Kandy",
+    description: "An intimate acoustic and orchestral showcase in the hill capital.",
+    date: "04 OCT 2026",
+    image: img13,
+  },
+  {
+    id: "up-03",
+    type: "TOUR",
+    year: "2026",
+    title: "London Showcase at Logan Hall",
+    location: "Logan Hall, IOE · London, UK",
+    description: "Bringing the signature catalog to international audiences across the UK.",
+    date: "21 NOV 2026",
+    image: img1,
+  },
+];
+
+export const archiveShows = [
+  {
+    id: "arch-01",
+    type: "CONCERT",
+    year: "2026",
+    title: "Jaana — Live",
+    location: "Sri Lanka · January 2026",
+    description: "With Rookantha Goonatillake and Windy Goonatillake. Live album released.",
+    number: "01",
+  },
+  {
+    id: "arch-02",
+    type: "CONCERT",
+    year: "2025",
+    title: "Thambapanni Colombo Night",
+    location: "Independence Arcade · Colombo · August 2025",
+    description: "Open-air city performance featuring timeless melodies.",
+    number: "02",
+  },
+  {
+    id: "arch-03",
+    type: "TOUR",
+    year: "2024–2025",
+    title: "Australia & New Zealand Tour",
+    location: "Multiple venues · AU / NZ",
+    description: "Concert dates across Australia and New Zealand connecting with global fans.",
+    number: "03",
+  },
+  {
+    id: "arch-04",
+    type: "TELEVISION",
+    year: "Three seasons",
+    title: "The Voice Sri Lanka",
+    location: "Sirasa TV · Colombo",
+    description: "Three-time coach. #TeamRaini mentoring the next generation of vocal talent.",
+    number: "04",
+  },
+  {
+    id: "arch-05",
+    type: "CONCERT",
+    year: "2021",
+    title: "Naada Yaathra",
+    location: "Sri Lanka",
+    description: "Live recording exploring traditional rhythms and contemporary vocal arrangements.",
+    number: "05",
+  },
+  {
+    id: "arch-06",
+    type: "CONCERT",
+    year: "2018",
+    title: "Homecoming",
+    location: "Sugathadasa Stadium · Colombo",
+    description: "Welcome concert on the family's return to Sri Lanka.",
+    number: "06",
+  },
+  {
+    id: "arch-07",
+    type: "CONCERT",
+    year: "2018",
+    title: "Eka Ahasak Yata",
+    location: "Sri Lanka",
+    description: "With DADDY — featuring live renditions of Neela Kandugate and Tharumini.",
+    number: "07",
   },
 ];
 
@@ -180,14 +302,15 @@ export const davikaStrips = [
 ];
 
 export const gallery = [
-  { src: imge10, alt: "Live concert stage production" },
-  { src: imge13, alt: "Backstage green room session" },
-  { src: img1, alt: "Television production appearance" },
-  { src: imge4, alt: "Acoustic unplugged broadcast" },
-  { src: img3, alt: "Master studio vocal recording" },
-  { src: imge7, alt: "Editorial portrait concept" },
-  { src: imge12, alt: "Promotional concept shoot" },
-  { src: imge14, alt: "Promotional concept shoot" },
+  { src: imge4, alt: "Live concert stage production at stadium arena" },
+  { src: imge10, alt: "Editorial portrait concept shoot" },
+    { src: img3, alt: "Master studio vocal recording session" },
+  { src: imge16, alt: "Television production studio spotlight" },
+  { src: imge13, alt: "Classical musical collaboration stage" },
+  { src: imge14, alt: "The Voice coaching session moment" },
+  { src: img12, alt: "Backstage green room vocal preparation" },
+  { src: imge7, alt: "Radiant red carpet awards gala appearance" },
+  { src: img1, alt: "Platinum Excellence Award recognition" },
 ];
 
 export const shows = [
