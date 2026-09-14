@@ -73,7 +73,6 @@ export const nav = [
   { label: "Music", href: "/music" },
   { label: "Shows", href: "/shows" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Contact", href: "/contact" },
 ];
 
 export const photos = {
@@ -89,21 +88,22 @@ export const photos = {
   voice: imge14,
   award: image,
   profile: img6,
+  story: img4,
 };
 
 export const bio = {
-  kicker: "A voice that already knew the stage",
-  title: "Raini Charuka Goonatillake grew up inside Sri Lankan song.",
+  kicker: "An enduring legacy of modern artistry",
+  title: "Raini Charuka shapes the heartbeat of contemporary Sri Lankan music.",
   paragraphs: [
-    "Her parents — Rookantha Goonatillake and Chandraleka Perera — are one of the island’s defining musical pairings, and the first melody written for her was already a debut.",
-    "She arrived in 2009 with Neela Kandu, composed by her father, then Tharumini, then Mathakada Handaawe for the film Sinhawolokanaya. By the time Chanchala Daase landed in 2014 she had a national register: pop, film, teledrama themes — a voice people already knew before they knew her name.",
-    "Awards followed the work, not the other way around. DMVA Female Vocalist for Chanchala Daase. A Raigam Award for Maha Katharaka, the theme of Click. Recent years hold Manika and the film Kambili — the same instrument, a quieter confidence.",
+    "Born to legendary musical royalty — Rookantha Goonatillake and Chandraleka Perera — Raini’s artistic lineage runs deep, yet her unmistakable voice is entirely her own. She stepped onto the national stage as a prodigious young talent with timeless anthems like 'Neela Kandugate' and 'Tharumini'.",
+    "Across over a decade of chart-topping hits, cinematic soundtracks, and award-winning television themes such as 'Chanchala Daase', Raini has cemented her status as a powerhouse vocalist who seamlessly bridges classic island melodies with high-end modern pop sophistication.",
+    "Beyond her celebrated discography and arena-scale live performances, she continues to shape the future of local music as a multi-season coach on *The Voice Sri Lanka*. Today, armed with a refined, quiet confidence, she explores new sonic dimensions while remaining eternally dedicated to her craft and audience.",
   ],
   stats: [
-    { value: "2009", label: "Debut" },
-    { value: "8+", label: "Drama Themes" },
+    { value: "15+", label: "Years on Stage" },
+    { value: "3x", label: "The Voice Coach" },
     { value: "2", label: "National Awards" },
-    { value: "∞", label: "On the Radio" },
+    { value: "∞", label: "Timeless Anthems" },
   ],
 };
 
@@ -304,13 +304,14 @@ export const davikaStrips = [
 export const gallery = [
   { src: imge4, alt: "Live concert stage production at stadium arena" },
   { src: imge10, alt: "Editorial portrait concept shoot" },
-    { src: img3, alt: "Master studio vocal recording session" },
+  { src: img3, alt: "Master studio vocal recording session" },
   { src: imge16, alt: "Television production studio spotlight" },
   { src: imge13, alt: "Classical musical collaboration stage" },
   { src: imge14, alt: "The Voice coaching session moment" },
   { src: img12, alt: "Backstage green room vocal preparation" },
   { src: imge7, alt: "Radiant red carpet awards gala appearance" },
   { src: img1, alt: "Platinum Excellence Award recognition" },
+  { src: img10, alt: "Luxury crimson editorial portrait in dramatic lighting", mobileOnly: true }, 
 ];
 
 export const shows = [

@@ -25,10 +25,21 @@ export function GalleryPage() {
           </p>
         </div>
 
-        {/* Unique Staggered / Asymmetrical Gallery Feed with Luxury Mobile-Optimized Styling (Staggered Offsets) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Dynamic Gallery Feed with Mobile-Only Item Support */}
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8">
           {gallery.map((item, idx) => {
-            // Creative offset classes for uneven artistic layout
+            // Conditionally hide mobile-only items on desktop screens (sm and above)
+            const visibilityClass = item.mobileOnly ? "block lg:hidden" : "block";
+
+            const mobileCardHeights = [
+              "aspect-[3/5]",
+              "aspect-[4/5]",
+              "aspect-[3/4]",
+              "aspect-[1/1]",
+              "aspect-[4/6]",
+            ];
+            const mobileHeight = mobileCardHeights[idx % mobileCardHeights.length];
+
             const staggerClasses = [
               "lg:translate-y-0",
               "lg:translate-y-10",
@@ -40,7 +51,7 @@ export function GalleryPage() {
               <div
                 key={item.alt + idx}
                 onClick={() => setActiveImage(item)}
-                className={`group relative overflow-hidden rounded-[var(--radius-xl)] bg-surface border border-line cursor-pointer shadow-2xl transition-all duration-500 hover:border-accent/60 hover:-translate-y-1 aspect-[4/5] sm:aspect-[16/11] flex flex-col justify-end ${stagger}`}
+                className={`group relative overflow-hidden rounded-[var(--radius-lg)] sm:rounded-[var(--radius-xl)] bg-surface border border-line cursor-pointer shadow-2xl transition-all duration-500 hover:border-accent/60 hover:-translate-y-1 flex flex-col justify-end ${mobileHeight} sm:aspect-[4/5] ${stagger} ${visibilityClass}`}
               >
                 <img
                   src={item.src}
@@ -48,18 +59,18 @@ export function GalleryPage() {
                   className="absolute inset-0 size-full object-cover filter brightness-90 contrast-105 transition-transform duration-700 group-hover:scale-110"
                 />
                 
-                {/* Always visible atmospheric bottom gradient for mobile clarity & cinematic hover state */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-95 sm:opacity-80 sm:group-hover:opacity-95 transition-opacity duration-300 p-5 sm:p-6 flex flex-col justify-end">
+                {/* Always visible atmospheric bottom gradient for mobile readability & cinematic hover state */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent opacity-90 sm:opacity-80 sm:group-hover:opacity-95 transition-opacity duration-300 p-3.5 sm:p-6 flex flex-col justify-end">
                   <div className="transform sm:translate-y-2 sm:group-hover:translate-y-0 transition-transform duration-300">
-                    <span className="font-sans text-[0.6rem] sm:text-[0.65rem] uppercase tracking-[0.25em] text-accent font-semibold block mb-1">
+                    <span className="font-sans text-[0.55rem] sm:text-[0.65rem] uppercase tracking-[0.2em] sm:tracking-[0.25em] text-accent font-semibold block mb-0.5 sm:mb-1">
                       Archive · 0{idx + 1}
                     </span>
-                    <h3 className="font-serif text-base sm:text-xl text-fg font-medium leading-snug">
+                    <h3 className="font-serif text-xs sm:text-xl text-fg font-medium leading-snug line-clamp-2 sm:line-clamp-none">
                       {item.alt}
                     </h3>
                   </div>
 
-                  <div className="absolute top-4 right-4 size-9 rounded-full bg-black/60 backdrop-blur-md hidden sm:flex items-center justify-center text-accent border border-accent/20 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="absolute top-3 right-3 sm:top-4 sm:right-4 size-7 sm:size-9 rounded-full bg-black/60 backdrop-blur-md hidden sm:flex items-center justify-center text-accent border border-accent/20 opacity-0 group-hover:opacity-100 transition-opacity">
                     <ZoomIn className="size-4" />
                   </div>
                 </div>
