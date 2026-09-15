@@ -30,16 +30,18 @@ export function ShowsPage() {
           <h2 className="font-serif text-3xl sm:text-4xl text-fg mb-10 tracking-tight">Ahead</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {upcomingShows.map((show) => (
+            {upcomingShows.map((show, idx) => (
               <div
                 key={show.id}
                 className="rounded-[var(--radius-xl)] bg-surface border border-line overflow-hidden shadow-2xl flex flex-col justify-between group hover:border-accent/40 transition-all duration-300"
               >
-                <div className="aspect-[16/10] overflow-hidden relative">
+                <div className="h-64 sm:h-72 w-full overflow-hidden relative">
                   <img
                     src={show.image}
                     alt={show.title}
-                    className="size-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-700"
+                    className={`size-full object-cover filter brightness-90 group-hover:scale-105 transition-transform duration-700 ${
+                      idx === 1 ? "object-[center_25%]" : "object-center"
+                    }`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
                   <span className="absolute top-4 left-4 bg-black/70 backdrop-blur-md text-accent font-sans text-[0.6rem] uppercase tracking-[0.2em] px-3 py-1 rounded-full border border-accent/20">

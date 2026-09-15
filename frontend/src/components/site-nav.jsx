@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { artist } from "@/lib/content";
 import { cn } from "@/lib/utils";
 
 const mainNav = [
-  { label: "Home", href: "/" },
-  { label: "The Story", href: "/story" },
-  { label: "Music", href: "/music" },
-  { label: "Shows", href: "/shows" },
-  { label: "Gallery", href: "/gallery" },
+  { label: "Home", to: "/" },
+  { label: "The Story", to: "/story" },
+  { label: "Music", to: "/music" },
+  { label: "Shows", to: "/shows" },
+  { label: "Gallery", to: "/gallery" },
 ];
 
 export function SiteNav() {
@@ -39,8 +40,8 @@ export function SiteNav() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:h-[4.25rem] sm:px-6">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="flex items-center gap-3 group"
         >
           <img
@@ -52,24 +53,24 @@ export function SiteNav() {
             {artist.first}
             <span className="text-accent"> {artist.last.toUpperCase()}</span>
           </span>
-        </a>
+        </Link>
         <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
           {mainNav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="font-sans text-xs font-medium uppercase tracking-[0.22em] text-muted transition-colors duration-150 hover:text-fg"
+            <Link
+              key={item.to}
+              to={item.to}
+              className="font-sans text-xs font-medium uppercase tracking-[0.22em] text-muted transition-colors duration-150 hover:text-fg [&.active]:text-accent"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
-        <a
-          href="/contact"
+        <Link
+          to="/contact"
           className="hidden h-10 items-center rounded-[var(--radius-sm)] bg-accent px-4 font-sans text-xs font-medium uppercase tracking-[0.18em] text-accent-fg transition-opacity duration-150 hover:opacity-90 md:inline-flex"
         >
           Write
-        </a>
+        </Link>
         <button
           type="button"
           className="inline-flex size-11 items-center justify-center text-fg md:hidden"
@@ -86,22 +87,22 @@ export function SiteNav() {
           aria-label="Mobile"
         >
           {mainNav.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
+            <Link
+              key={item.to}
+              to={item.to}
               className="flex min-h-11 items-center font-serif text-2xl text-fg"
               onClick={() => setOpen(false)}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="mt-4 inline-flex h-12 items-center justify-center rounded-[var(--radius-md)] bg-accent font-sans text-sm font-medium uppercase tracking-[0.18em] text-accent-fg"
             onClick={() => setOpen(false)}
           >
             Write
-          </a>
+          </Link>
         </nav>
       ) : null}
     </header>

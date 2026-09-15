@@ -89,6 +89,7 @@ export const photos = {
   award: image,
   profile: img6,
   story: img4,
+  music: imge1,
 };
 
 export const bio = {
@@ -196,7 +197,7 @@ export const upcomingShows = [
     location: "Nelum Pokuna Mahinda Rajapaksa Theatre · Colombo",
     description: "An immersive evening celebrating over 15 years of musical heritage with special guest appearances.",
     date: "12 SEP 2026",
-    image: img10,
+    image: img3,
   },
   {
     id: "up-02",
@@ -206,7 +207,7 @@ export const upcomingShows = [
     location: "Mahaweli Reach · Kandy",
     description: "An intimate acoustic and orchestral showcase in the hill capital.",
     date: "04 OCT 2026",
-    image: img13,
+    image: imge9,
   },
   {
     id: "up-03",
@@ -216,7 +217,7 @@ export const upcomingShows = [
     location: "Logan Hall, IOE · London, UK",
     description: "Bringing the signature catalog to international audiences across the UK.",
     date: "21 NOV 2026",
-    image: img1,
+    image: img2,
   },
 ];
 
@@ -312,11 +313,4 @@ export const gallery = [
   { src: imge7, alt: "Radiant red carpet awards gala appearance" },
   { src: img1, alt: "Platinum Excellence Award recognition" },
   { src: img10, alt: "Luxury crimson editorial portrait in dramatic lighting", mobileOnly: true }, 
-];
-
-export const shows = [
-  { date: "12 SEP 2026", venue: "Nelum Pokuna Mahinda Rajapaksa Theatre", city: "Colombo", status: "upcoming" },
-  { date: "04 OCT 2026", venue: "Mahaweli Reach Grand Hall", city: "Kandy", status: "upcoming" },
-  { date: "21 NOV 2026", venue: "Logan Hall, IOE", city: "London", status: "upcoming" },
-  { date: "18 DEC 2025", venue: "Stein Studios Live Concert", city: "Colombo", status: "past" },
 ];
