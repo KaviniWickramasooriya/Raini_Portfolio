@@ -68,7 +68,7 @@ export function LandingHero() {
           </div>
           
           {/* Mobile-Only Integrated Track Player Container */}
-          <div className="w-[88%] max-w-[320px] mx-auto mt-[-0.4rem] mb-[-2.8rem] md:hidden relative z-20">
+          <div className="w-[88%] max-w-[320px] mx-auto mt-[-0.2rem] mb-0 md:hidden relative z-20">
             <TrackPlayer compact />
           </div>
         </div>
