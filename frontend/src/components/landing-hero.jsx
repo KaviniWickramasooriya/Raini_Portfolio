@@ -24,8 +24,8 @@ export function LandingHero() {
         <p className="hero-mobile-kicker">THE VOICE OF</p>
         <div className="hero-title-badge-mobile">
           <span>SINGER</span>
-          <span className="hero-dot" />
-          <span>PERFORMER</span>
+          {/* <span className="hero-dot" />
+          <span>PERFORMER</span> */}
           <span className="hero-dot" />
           <span>SONGWRITER</span>
         </div>
